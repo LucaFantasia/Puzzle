@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-    <html>
-        <head>
-            <title>Game</title>
-            <link href="UI.css" rel="stylesheet">
-        </head>
-        <body>
-            <script src="3x3.js"></script>
-        </body>
-    </html>
+<html>
+
+<head>
+    <link href="UI.css" rel="stylesheet">
+    <title>Grid Game</title>
+</head>
+
+<body>
+    <table class="levelSelect">
+        <tr>
+            <td colspan="3">
+                <h1>Grid Game Levels</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>2x2</h3>
+            </td>
+            <td>
+                <button id="level11" onclick="level11()">
+                    <h3>Level 1</h3>
+                </button>
+            </td>
+            <td>
+                <button id="level12" onclick="level12()">
+                    <h3>Level 2</h3>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>3x3</h3>
+            </td>
+            <td>
+                <button id="level21" onclick="level21()">
+                    <h3>Level 1</h3>
+                </button>
+            </td>
+            <td>
+                <button id="level22" onclick="level22()">
+                    <h3>Level 2</h3>
+                </button>
+            </td>
+        </tr>
+    </table>
+    <h1 class="gap">GAP</h1>
+    <table class="levelTable" id="levelTable"></table>
+    <script src="template.js"></script>
+    <script src="2x2.js"></script>
+    <script src="3x3.js"></script>
+</body>
+
+</html>

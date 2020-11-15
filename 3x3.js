@@ -1,84 +1,199 @@
-var body, table, row, cell, button, nums, numsDisplayed;
-var randomNum, h2, empty, numDisplay;
-var tempCount = 1;
-var buttonID = 1;
-var nums = [1,2,3,4,5,6,7,8];
-var numsDisplayed = [false,false,false,false,false,false,false,false];
+var level21Moves = 0;
+var level22Moves = 0;
 
-function createGrid() {
-    body = document.getElementsByTagName("body")[0];
-    table = document.createElement("table");
+function level21() {
+    levelSelected = 21;
+    levelTable.innerHTML = "";
+    buildTable(3, 3);
+    rows = 3;
+    document.getElementById("21").innerHTML = "";
+    document.getElementById("22").innerHTML = "1";
+    document.getElementById("23").innerHTML = "3";
+    document.getElementById("24").innerHTML = "4";
+    document.getElementById("25").innerHTML = "2";
+    document.getElementById("26").innerHTML = "6";
+    document.getElementById("27").innerHTML = "7";
+    document.getElementById("28").innerHTML = "5";
+    document.getElementById("29").innerHTML = "8";
+    movesNew = 0;
+    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+}
 
-    for(r = 0; r < 3; r++) {
-        row = document.createElement("tr");
-        for(c = 0; c < 3; c++) {
-            cell = document.createElement("td");
-            button = document.createElement("button");
-            button.setAttribute("id", buttonID);
-            button.setAttribute("onclick", "buttonClick(" + buttonID + ")");
-            button.setAttribute("class", "nums");
-            buttonID++;
-            cell.appendChild(button);
-            row.appendChild(cell);
+function level22() {
+    levelSelected = 22;
+    levelTable.innerHTML = "";
+    buildTable(3, 3);
+    rows = 3;
+    document.getElementById("21").innerHTML = "2";
+    document.getElementById("22").innerHTML = "3";
+    document.getElementById("23").innerHTML = "6";
+    document.getElementById("24").innerHTML = "1";
+    document.getElementById("25").innerHTML = "";
+    document.getElementById("26").innerHTML = "5";
+    document.getElementById("27").innerHTML = "4";
+    document.getElementById("28").innerHTML = "7";
+    document.getElementById("29").innerHTML = "8";
+    movesNew = 0;
+    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+}
+
+function button21() {
+    buttonClicked = "21";
+}
+function button22() {
+    buttonClicked = "22";
+}
+function button23() {
+    buttonClicked = "23";
+}
+function button24() {
+    buttonClicked = "24";
+}
+function button25() {
+    buttonClicked = "25";
+}
+function button26() {
+    buttonClicked = "26";
+}
+function button27() {
+    buttonClicked = "27";
+}
+function button28() {
+    buttonClicked = "28";
+}
+function button29() {
+    buttonClicked = "29";
+}
+
+levelTable.addEventListener("click", function () {
+    if (rows === 3) {
+        if (document.getElementById("21").innerHTML === "") {
+            if (buttonClicked === "22" || buttonClicked === "24") {
+                document.getElementById("21").innerHTML = document.getElementById(buttonClicked).innerHTML;
+                document.getElementById(buttonClicked).innerHTML = "";
+                movesNew++;
+                if (levelSelected === 21) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                } else if (levelSelected === 22) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                }
+            }
+        } else if (document.getElementById("22").innerHTML === "") {
+            if (buttonClicked === "21" || buttonClicked === "23" || buttonClicked === "25") {
+                document.getElementById("22").innerHTML = document.getElementById(buttonClicked).innerHTML;
+                document.getElementById(buttonClicked).innerHTML = "";
+                movesNew++;
+                if (levelSelected === 21) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                } else if (levelSelected === 22) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                }
+            }
+        } else if (document.getElementById("23").innerHTML === "") {
+            if (buttonClicked === "22" || buttonClicked === "26") {
+                document.getElementById("23").innerHTML = document.getElementById(buttonClicked).innerHTML;
+                document.getElementById(buttonClicked).innerHTML = "";
+                movesNew++;
+                if (levelSelected === 21) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                } else if (levelSelected === 22) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                }
+            }
+        } else if (document.getElementById("24").innerHTML === "") {
+            if (buttonClicked === "21" || buttonClicked === "25" || buttonClicked === "27") {
+                document.getElementById("24").innerHTML = document.getElementById(buttonClicked).innerHTML;
+                document.getElementById(buttonClicked).innerHTML = "";
+                movesNew++;
+                if (levelSelected === 21) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                } else if (levelSelected === 22) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                }
+            }
+        } else if (document.getElementById("25").innerHTML === "") {
+            if (buttonClicked === "22" || buttonClicked === "24" || buttonClicked === "26" || buttonClicked === "28") {
+                document.getElementById("25").innerHTML = document.getElementById(buttonClicked).innerHTML;
+                document.getElementById(buttonClicked).innerHTML = "";
+                movesNew++;
+                if (levelSelected === 21) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                } else if (levelSelected === 22) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                }
+            }
+        } else if (document.getElementById("26").innerHTML === "") {
+            if (buttonClicked === "23" || buttonClicked === "25" || buttonClicked === "29") {
+                document.getElementById("26").innerHTML = document.getElementById(buttonClicked).innerHTML;
+                document.getElementById(buttonClicked).innerHTML = "";
+                movesNew++;
+                if (levelSelected === 21) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                } else if (levelSelected === 22) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                }
+            }
+        } else if (document.getElementById("27").innerHTML === "") {
+            if (buttonClicked === "24" || buttonClicked === "28") {
+                document.getElementById("27").innerHTML = document.getElementById(buttonClicked).innerHTML;
+                document.getElementById(buttonClicked).innerHTML = "";
+                movesNew++;
+                if (levelSelected === 21) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                } else if (levelSelected === 22) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                }
+            }
+        } else if (document.getElementById("28").innerHTML === "") {
+            if (buttonClicked === "25" || buttonClicked === "27" || buttonClicked === "29") {
+                document.getElementById("28").innerHTML = document.getElementById(buttonClicked).innerHTML;
+                document.getElementById(buttonClicked).innerHTML = "";
+                movesNew++;
+                if (levelSelected === 21) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                } else if (levelSelected === 22) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                }
+            }
+
+        } else if (document.getElementById("29").innerHTML === "") {
+            if (buttonClicked === "26" || buttonClicked === "28") {
+                document.getElementById("29").innerHTML = document.getElementById(buttonClicked).innerHTML;
+                document.getElementById(buttonClicked).innerHTML = "";
+                movesNew++;
+                if (levelSelected === 21) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                } else if (levelSelected === 22) {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                }
+            }
         }
-        table.appendChild(row);
-    }
-    row = document.createElement("tr");
-    cell = document.createElement("td");
-    cell.setAttribute("class","options");
-    cell.setAttribute("colspan","3");
-    button = document.createElement("button");
-    button.setAttribute("class","reset");
-    button.setAttribute("id", "reset");
-    cell.appendChild(button);
-    row.appendChild(cell);
-    table.appendChild(row);
-    body.appendChild(table);
-}
-
-function emptyCell() {
-    empty = Math.floor(Math.random() * nums.length + 1);
-    document.getElementById(empty).innerHTML = "";
-}
-
-function generateNums() {
-    document.getElementById("reset").innerHTML = "Reset Puzzle";
-    do{
-        randomNum = Math.floor(Math.random() * nums.length);
-    } while(numsDisplayed[randomNum] === true);
-
-    numsDisplayed[randomNum] = true;
-    if(tempCount === empty) {
-        tempCount++;
-    }
-    numDisplay = randomNum + 1;
-    document.getElementById(tempCount).innerHTML = numDisplay;
-    tempCount++;
-}
-
-createGrid();
-emptyCell();
-for(i = 0; i < 8; i++) {
-    generateNums();
-}
-
-document.getElementById("reset").addEventListener("click", function() {
-    document.body.style.backgroundColor = "#FFFFFF";
-    emptyCell();
-    numsDisplayed = [false,false,false,false,false,false,false,false];
-    tempCount = 1;
-    for(i = 0; i < 8; i++) {
-        generateNums();
+        if (document.getElementById("21").innerHTML === "1" && document.getElementById("22").innerHTML === "2" && document.getElementById("23").innerHTML === "3" && document.getElementById("24").innerHTML === "4" && document.getElementById("25").innerHTML === "5" && document.getElementById("26").innerHTML === "6" && document.getElementById("27").innerHTML === "7" && document.getElementById("28").innerHTML === "8") {
+            if (levelSelected === 21) {
+                if (level21Moves === 0) {
+                    level21Moves = movesNew;
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                } else if (movesNew < level21Moves) {
+                    level21Moves = movesNew;
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                } else {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level21Moves + " moves";
+                }
+                document.getElementById("level21").style.backgroundColor = "#00FF00";
+            } else if (levelSelected === 22) {
+                if (level22Moves === 0) {
+                    level22Moves = movesNew;
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                }
+                else if (movesNew < level22Moves) {
+                    level22Moves = movesNew;
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                } else {
+                    h3.innerHTML = movesNew + " moves <br> Best: " + level22Moves + " moves";
+                }
+                document.getElementById("level22").style.backgroundColor = "#00FF00";
+            }
+        }
     }
 });
 
-function buttonClick(num) {
-    document.getElementById(empty).innerHTML = document.getElementById(num).innerHTML;
-    empty = num;
-    document.getElementById(empty).innerHTML = "";
-
-    if(document.getElementById(1).innerHTML == 1 && document.getElementById(2).innerHTML == 2 && document.getElementById(3).innerHTML == 3 && document.getElementById(4).innerHTML == 4 && document.getElementById(5).innerHTML == 5 && document.getElementById(6).innerHTML == 6 && document.getElementById(7).innerHTML == 7 && document.getElementById(8).innerHTML == 8) {
-        document.body.style.backgroundColor = "#00FF00";
-    }
-
-}
